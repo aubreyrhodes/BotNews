@@ -1,0 +1,5 @@
+html
+	head
+		title BotNews
+	body
+		p Markets #{@market_up ? "rallied" : "fell"} today as 		#{@twitter_status[rand(@twitter_status.size)].name}
