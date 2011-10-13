@@ -1,5 +1,8 @@
 html
 	head
 		title BotNews
+		link href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css" rel="stylesheet"
 	body
-		p Markets #{@market_up ? "rallied" : "fell"} today on news of 		#{@twitter_status[rand(@twitter_status.size)].name}
+		div class="container-fluid"
+			div class="row" style="text-align: center; margin-top: 30px;"
+				h1  Markets #{@market_up ? "rallied" : "fell"} today on news of 		#{@twitter_status[rand(@twitter_status.size)].name}
