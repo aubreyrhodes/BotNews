@@ -7,7 +7,15 @@ html
 			div class="row" style="text-align: center; margin-top: 30px;"
 				h1 Markets #{@market_up ? "rallied" : "fell"} today on news of #{@twitter_status}
 			div class="row"
-				a href="/" Get Another Headline
+				div class="span5"
+					a href="/" Get Another Headline
+				dif class="span11" style="position: relative;"
+					div class="addthis_toolbox addthis_default_style " style="position: absolute; right:0px;"
+						a class="addthis_button_facebook_like" fb:like:layout="button_count"
+						a class="addthis_button_tweet"
+						a class="addthis_button_google_plusone" g:plusone:size="medium"
+						a class="addthis_counter addthis_pill_style"
+					script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4e98e5831075ac08"
 		javascript:
 
 			  var _gaq = _gaq || [];
