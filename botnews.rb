@@ -5,7 +5,7 @@ require 'date'
 require 'yahoofinance'
 
 
-get '/' do  
+get '/' do
   load_data
   redirect "/#{rand(@twitter_data.size)}/#{date_string Time.now}"
 end
@@ -31,10 +31,11 @@ def check_cache
   end
 end
 
-def load_data  
+def load_data
   check_cache
   @twitter_data ||= Twitter.trends_daily.first[1]
-  @market_up ||= YahooFinance.get_quotes(YahooFinance::StandardQuote, 'INDU')["^DJI"].changePoints > 0
+  dji_quote = YahooFinance.get_quotes(YahooFinance::StandardQuote, 'INDU')["^DJI"]
+  @market_up ||= dji_quote.nil? ? nil : dji_quote.changePoints > 0
 end
 
 def date_string time
